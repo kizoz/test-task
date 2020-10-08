@@ -1,0 +1,44 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div style="text-align: center">
+  <h1>Register new student</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+          <div class=form-group>
+            <label><span class="req"> </span> Name: </label>
+            <label>
+              <input class="form-control" required type="text" [(ngModel)]="student.name" name="name"/>
+            </label>
+          </div>
+
+          <div class=form-group>
+            <label><span class="req"> </span> Email: </label>
+            <label>
+              <input class="form-control" type="text" [(ngModel)]="student.email" name="email"/>
+            </label>
+            <div id="errFirst"></div>
+          </div>
+
+          <div class= form-group>
+            <label><span class="req"> </span> Group : </label>
+            <label>
+              <input class="form-control" type="number" [(ngModel)]="student.groupNumber" name="groupNumber"/>
+            </label>
+          </div>
+
+        <div>{{message}}</div>
+
+          <div class=form-group>
+            <button class="btn btn-submit" type="submit" name="submit_reg" value="add-student" (click)="addStudent()">SUBMIT</button>
+
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>

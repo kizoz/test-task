@@ -1,0 +1,43 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+  <div class="row">
+  </div>
+</div>
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+      <table class="table table-striped custab">
+        <div>{{message}}</div>
+        <label>
+          Student name:
+          <div>{{studentName}}</div>
+          Book name:
+          <input class="form-control" type="text" [(ngModel)]="bookName" name="groupNumber"/>
+          <button class="btn btn-submit" type="submit" name="add-book" value="add-book" (click)="addBook(studentId)">ADD BOOK</button>
+        </label>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Group</th>
+          <th>Books</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.group.number}}</td>
+          <td *ngFor="let book of student.books">{{book.name}}</td>
+          <td>
+            <label>
+              <button class="btn btn-submit" type="button" name="set" value="add-book" (click)="setStudentIdAndName(student.id, student.name)">ADD BOOK</button>
+            </label>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
